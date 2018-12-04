@@ -20,26 +20,40 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Row="0" Grid.Column="0"/>
-            <Button Grid.Row="1" Grid.Column="0"/>
-            <Button Grid.Row="2" Grid.Column="0"/>
-            <Button Grid.Row="0" Grid.Column="1"/>
-            <Button Grid.Row="1" Grid.Column="1"/>
-            <Button Grid.Row="2" Grid.Column="1"/>
-            <Button Grid.Row="0" Grid.Column="2"/>
-            <Button Grid.Row="1" Grid.Column="2"/>
-            <Button Grid.Row="2" Grid.Column="2"/>
-            <Button Grid.Row="0" Grid.Column="3"/>
-            <Button Grid.Row="1" Grid.Column="3"/>
-            <Button Grid.Row="2" Grid.Column="3"/>
+            <Button Content="I" Grid.Row="0" Grid.Column="0"/>
+            <Button Content="II" Grid.Row="1" Grid.Column="0"/>
+            <Button Content="III" Grid.Row="2" Grid.Column="0"/>
+            <Button Content="III" Grid.Row="3" Grid.Column="0"/>
+            
+            <Button Content="IV" Grid.Row="0" Grid.Column="1"/>
+            <Button Content="V" Grid.Row="1" Grid.Column="1"/>
+            <Button Content="VI" Grid.Row="2" Grid.Column="1"/>
+            <Button Content="VII" Grid.Row="3" Grid.Column="1"/>
+            
+            <Button Content="VIII" Grid.Row="0" Grid.Column="2"/>
+            <Button Content="IX" Grid.Row="1" Grid.Column="2"/>
+            <Button Content="X" Grid.Row="2" Grid.Column="2"/>
+            <Button Content="XI" Grid.Row="3" Grid.Column="2"/>
+            
+            <Button Content="XII" Grid.Row="0" Grid.Column="3"/>
+            <Button Content="XIII" Grid.Row="1" Grid.Column="3"/>
+            <Button Content="L" Grid.Row="2" Grid.Column="3"/>
+            <Button Content="C" Grid.Row="3" Grid.Column="3"/>
+
+            <Button Content="D" Grid.Row="0" Grid.Column="4"/>
+            <Button Content="M" Grid.Row="1" Grid.Column="4"/>
+            <Button Content="DEL" Grid.Row="2" Grid.Column="4"/>
+            <Button Content="A/C" Grid.Row="3" Grid.Column="4"/>
         </Grid>
         <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="100" Margin="36,181,0,0" VerticalAlignment="Top" Width="257"/>
 
