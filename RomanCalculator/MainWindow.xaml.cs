@@ -20,9 +20,60 @@ namespace RomanCalculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        Dictionary<char, int> dict = new Dictionary<char, int>();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            dict.Add('I',1);
+            dict.Add('V',5);
+            dict.Add('X',10);
+            dict.Add('L',50);
+            dict.Add('C', 100);
+            dict.Add('D',1000);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button butt = sender as Button;
+            bool isOk = true;
+            string str = "";
+
+            if ((string)butt.Content != "OK" && isOk)
+            {
+                str = (string)butt.Content;
+
+
+                Txtbx1.Text += (string)butt.Content;
+            }
+            else
+            {
+                Txtbx2.Text += (string)butt.Content;
+            }
+
+            
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            string test = "XXII";
+            int i = 0;
+
+            char[] chars = test.ToCharArray();
+
+            foreach (char c in chars)
+            {
+                i += dict[c];
+            }
+
+            MessageBox.Show(i.ToString());
         }
     }
 }

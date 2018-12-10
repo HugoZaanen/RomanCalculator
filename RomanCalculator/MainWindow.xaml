@@ -5,16 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RomanCalculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="346.4">
-    <Grid Margin="0,0,2,0">
-        <TextBox IsReadOnly="False" TextAlignment="Left" FontSize="40" HorizontalAlignment="Left" Height="55" TextWrapping="Wrap" VerticalAlignment="Top" Width="257" Margin="36,36,0,0"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="36,123,0,0" VerticalAlignment="Top" Width="47"/>
+        Title="MainWindow" Height="381" Width="346.4">
+    <Grid Margin="0,0,2,2">
+        <Button Content="+" HorizontalAlignment="Left" Margin="36,123,0,0" VerticalAlignment="Top" Width="47" RenderTransformOrigin="0.617,0.5" Click="Button_Click_1"/>
         <Button Content="-" HorizontalAlignment="Left" Margin="106,123,0,0" VerticalAlignment="Top" Width="43"/>
         <Button Content="*" HorizontalAlignment="Left" Margin="175,123,0,0" VerticalAlignment="Top" Width="43"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="55" Margin="36,36,0,0" VerticalAlignment="Top" Width="257"/>
-        <Button Content="/" HorizontalAlignment="Left" Margin="234,123,0,0" VerticalAlignment="Top" Width="49"/>
-        
-        <Grid HorizontalAlignment="Left" Height="100" Margin="36,181,0,0" VerticalAlignment="Top" Width="257">
+        <Button Content="/" HorizontalAlignment="Left" Margin="234,123,0,0" VerticalAlignment="Top" Width="42"/>
+
+        <Grid HorizontalAlignment="Left" Height="100" Margin="36,164,0,0" VerticalAlignment="Top" Width="257">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -30,34 +28,38 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button Content="I" Grid.Row="0" Grid.Column="0"/>
-            <Button Content="II" Grid.Row="1" Grid.Column="0"/>
-            <Button Content="III" Grid.Row="2" Grid.Column="0"/>
-            <Button Content="III" Grid.Row="3" Grid.Column="0"/>
-            
-            <Button Content="IV" Grid.Row="0" Grid.Column="1"/>
-            <Button Content="V" Grid.Row="1" Grid.Column="1"/>
-            <Button Content="VI" Grid.Row="2" Grid.Column="1"/>
-            <Button Content="VII" Grid.Row="3" Grid.Column="1"/>
-            
-            <Button Content="VIII" Grid.Row="0" Grid.Column="2"/>
-            <Button Content="IX" Grid.Row="1" Grid.Column="2"/>
-            <Button Content="X" Grid.Row="2" Grid.Column="2"/>
-            <Button Content="XI" Grid.Row="3" Grid.Column="2"/>
-            
-            <Button Content="XII" Grid.Row="0" Grid.Column="3"/>
-            <Button Content="XIII" Grid.Row="1" Grid.Column="3"/>
-            <Button Content="L" Grid.Row="2" Grid.Column="3"/>
-            <Button Content="C" Grid.Row="3" Grid.Column="3"/>
+            <Button Content="I"   Grid.Row="0" Grid.Column="0"  Click="Button_Click"/>
+            <Button Content="II"  Grid.Row="1" Grid.Column="0"  Click="Button_Click"/>
+            <Button Content="III" Grid.Row="2" Grid.Column="0"  Click="Button_Click"/>
+            <Button Content="III" Grid.Row="3" Grid.Column="0"  Click="Button_Click"/>
 
-            <Button Content="D" Grid.Row="0" Grid.Column="4"/>
-            <Button Content="M" Grid.Row="1" Grid.Column="4"/>
-            <Button Content="DEL" Grid.Row="2" Grid.Column="4"/>
-            <Button Content="A/C" Grid.Row="3" Grid.Column="4"/>
+            <Button Content="IV"  Grid.Row="0" Grid.Column="1"  Click="Button_Click"/>
+            <Button Content="V"   Grid.Row="1" Grid.Column="1"  Click="Button_Click"/>
+            <Button Content="VI"  Grid.Row="2" Grid.Column="1"  Click="Button_Click"/>
+            <Button Content="VII" Grid.Row="3" Grid.Column="1"  Click="Button_Click"/>
+
+            <Button Content="VIII" Grid.Row="0" Grid.Column="2" Click="Button_Click"/>
+            <Button Content="IX"   Grid.Row="1" Grid.Column="2" Click="Button_Click"/>
+            <Button Content="X"    Grid.Row="2" Grid.Column="2" Click="Button_Click"/>
+            <Button Content="XI"   Grid.Row="3" Grid.Column="2" Click="Button_Click"/>
+
+            <Button Content="XII"  Grid.Row="0" Grid.Column="3" Click="Button_Click"/>
+            <Button Content="XIII" Grid.Row="1" Grid.Column="3" Click="Button_Click"/>
+            <Button Content="L"    Grid.Row="2" Grid.Column="3" Click="Button_Click"/>
+            <Button Content="C"    Grid.Row="3" Grid.Column="3" Click="Button_Click"/>
+
+            <Button Content="D" Grid.Row="0" Grid.Column="4"    Click="Button_Click"/>
+            <Button Content="DEL" Grid.Row="1" Grid.Column="4"  Click="Button_Click"/>
+            <Button Content="A/C" Grid.Row="2" Grid.Column="4"  Click="Button_Click"/>
+
         </Grid>
-        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="100" Margin="36,181,0,0" VerticalAlignment="Top" Width="257"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="63,156,0,0" VerticalAlignment="Top" Width="54"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="188,156,0,0" VerticalAlignment="Top" Width="59"/>
+
+        <Button Content="OK" HorizontalAlignment="Left" Margin="282,13,0,0" VerticalAlignment="Top" Width="26"/>
+        <TextBox x:Name="Txtbx1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Margin="36,10,0,0"/>
+        <TextBox x:Name="Txtbx2" HorizontalAlignment="Left" Height="23" Margin="36,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" RenderTransformOrigin="0.625,-0.435"/>
+        <TextBox x:Name="Txtbx3" HorizontalAlignment="Left" Height="23" Margin="36,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="36,289,0,0" Height="22" Content="TestBut" Click="Button_Click_2">
+        </Button>
 
     </Grid>
 </Window>
