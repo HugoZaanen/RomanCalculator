@@ -125,13 +125,51 @@ namespace RomanCalculator
                         str += "M";
                         z -= 1000;
                     }
-
-                    if (z%100 == 0)
+                    else if (z%100 == 0)
                     {
-                        if (z*5 == 500)
+                        if(z == 900)
+                        {
+                            str += "CM";
+                            z -= 900;
+                        }
+                        else if (z >= 500 && z < 900)
                         {
                             str += "D";
+                            z -= 500;
                         }
+                        else if (z == 400)
+                        {
+                            str += "CD";
+                            z -= 400;
+                        }
+                        else
+                        {
+                            str += "C";
+                        }
+                    }
+
+                    else if(z%10 == 0)
+                    {
+                        if (z == 90)
+                        {
+                            str += "XC";
+                            z -= 90;
+                        }
+                        else if (z >= 50 && z < 90)
+                        {
+                            str += "L";
+                            z -= 50;
+                        }
+                        else
+                        {
+                            str += "X";
+                            z -= 10; 
+                        }
+                    }
+
+                    if ()
+                    {
+
                     }
                 }
             }
