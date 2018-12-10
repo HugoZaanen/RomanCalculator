@@ -63,14 +63,27 @@ namespace RomanCalculator
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            string test = "XXII";
+            string test = "LXIX";
             int i = 0;
 
             char[] chars = test.ToCharArray();
 
-            foreach (char c in chars)
+            for (int j = chars.Length; j >= 0;j--)
             {
-                i += dict[c];
+                if (j == chars.Length)
+                {
+                    i += dict[chars[j - 1]];
+                    j--;
+                }
+                else if (dict[chars[j]] == 1 && dict[chars[j]] < dict[chars[j + 1]])
+                {
+                    i -= dict[chars[j]];
+                }
+                else
+                {
+                    i += dict[chars[j]];
+                }
+                
             }
 
             MessageBox.Show(i.ToString());
