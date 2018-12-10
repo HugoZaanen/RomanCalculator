@@ -87,15 +87,35 @@ namespace RomanCalculator
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            int k = 100;
+            int k = 5381;
+            string str = "";
+            List<int> lijst = new List<int>();
 
-            while (k > 0)
+            if (k/1000 > 0)
             {
-                if ()
-                {
-
-                }
+                lijst.Add((k/10000) * 1000);
+                k = k % 1000;
             }
+
+            if (k/100 > 0)
+            {
+                lijst.Add((k/100) * 100);
+                k = k % 100;
+            }
+
+            if(k/10 > 0)
+            {
+                lijst.Add((k/10) * 10);
+                k = k % 10;
+            }
+
+            if (k/1 > 0)
+            {
+                lijst.Add(k/1);
+                k = k % 1;
+            }
+
+
         }
     }
 }
