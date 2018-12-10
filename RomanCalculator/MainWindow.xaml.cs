@@ -115,7 +115,26 @@ namespace RomanCalculator
                 k = k % 1;
             }
 
+            foreach (int i in lijst)
+            {
+                int z = i;
+                while (z > 0)
+                {
+                    if (i%1000 == 0)
+                    {
+                        str += "M";
+                        z -= 1000;
+                    }
 
+                    if (z%100 == 0)
+                    {
+                        if (z*5 == 500)
+                        {
+                            str += "D";
+                        }
+                    }
+                }
+            }
         }
     }
 }
