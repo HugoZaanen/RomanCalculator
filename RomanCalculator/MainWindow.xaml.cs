@@ -31,7 +31,8 @@ namespace RomanCalculator
             dict.Add('X',10);
             dict.Add('L',50);
             dict.Add('C', 100);
-            dict.Add('D',1000);
+            dict.Add('D',500);
+            dict.Add('M',1000);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,16 +45,12 @@ namespace RomanCalculator
             {
                 str = (string)butt.Content;
 
-
                 Txtbx1.Text += (string)butt.Content;
             }
             else
             {
                 Txtbx2.Text += (string)butt.Content;
             }
-
-            
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -63,7 +60,7 @@ namespace RomanCalculator
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            string test = "LXIX";
+            string test = "LXXX";
             int i = 0;
 
             char[] chars = test.ToCharArray();
@@ -75,18 +72,30 @@ namespace RomanCalculator
                     i += dict[chars[j - 1]];
                     j--;
                 }
-                else if (dict[chars[j]] == 1 && dict[chars[j]] < dict[chars[j + 1]])
+                else if ((dict[chars[j]] == 1 || dict[chars[j]] == 10 || dict[chars[j]] == 100) && dict[chars[j]] < dict[chars[j + 1]])
                 {
                     i -= dict[chars[j]];
                 }
                 else
                 {
                     i += dict[chars[j]];
-                }
-                
+                }               
             }
 
             MessageBox.Show(i.ToString());
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            int k = 100;
+
+            while (k > 0)
+            {
+                if ()
+                {
+
+                }
+            }
         }
     }
 }

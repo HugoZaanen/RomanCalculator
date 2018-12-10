@@ -49,8 +49,9 @@
             <Button Content="C"    Grid.Row="3" Grid.Column="3" Click="Button_Click"/>
 
             <Button Content="D" Grid.Row="0" Grid.Column="4"    Click="Button_Click"/>
-            <Button Content="DEL" Grid.Row="1" Grid.Column="4"  Click="Button_Click"/>
-            <Button Content="A/C" Grid.Row="2" Grid.Column="4"  Click="Button_Click"/>
+            <Button Content="M" Grid.Row="1" Grid.Column="4"    Click="Button_Click"/>
+            <Button Content="DEL" Grid.Row="2" Grid.Column="4"  Click="Button_Click"/>
+            <Button Content="A/C" Grid.Row="3" Grid.Column="4"  Click="Button_Click"/>
         </Grid>
 
         <Button Content="OK" HorizontalAlignment="Left" Margin="282,13,0,0" VerticalAlignment="Top" Width="26"/>
@@ -59,5 +60,6 @@
         <TextBox x:Name="Txtbx3" HorizontalAlignment="Left" Height="23" Margin="36,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240"/>
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="36,289,0,0" Height="22" Content="TestBut" Click="Button_Click_2">
         </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="175,291,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
     </Grid>
 </Window>
