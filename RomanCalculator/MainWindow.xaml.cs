@@ -60,7 +60,7 @@ namespace RomanCalculator
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            string test = "LXXX";
+            string test = "MMCCXXII";
             int i = 0;
 
             char[] chars = test.ToCharArray();
@@ -87,7 +87,7 @@ namespace RomanCalculator
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            int k = 5381;
+            int k = 2222;
             string str = "";
             List<int> lijst = new List<int>();
 
