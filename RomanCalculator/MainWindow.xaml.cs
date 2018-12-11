@@ -93,7 +93,7 @@ namespace RomanCalculator
 
             if (k/1000 > 0)
             {
-                lijst.Add((k/10000) * 1000);
+                lijst.Add((k/1000) * 1000);
                 k = k % 1000;
             }
 
@@ -118,14 +118,15 @@ namespace RomanCalculator
             foreach (int i in lijst)
             {
                 int z = i;
+
                 while (z > 0)
                 {
-                    if (i%1000 == 0)
+                    if (z % 1000 == 0)
                     {
                         str += "M";
                         z -= 1000;
                     }
-                    else if (z%100 == 0)
+                    else if (z % 100 == 0)
                     {
                         if(z == 900)
                         {
@@ -145,10 +146,10 @@ namespace RomanCalculator
                         else
                         {
                             str += "C";
+                            z -= 100;
                         }
                     }
-
-                    else if(z%10 == 0)
+                    else if(z % 10 == 0)
                     {
                         if (z == 90)
                         {
@@ -160,16 +161,39 @@ namespace RomanCalculator
                             str += "L";
                             z -= 50;
                         }
+                        else if(z == 40)
+                        {
+                            str += "XL";
+                            z -= 10; 
+                        }
                         else
                         {
                             str += "X";
-                            z -= 10; 
+                            z -= 10;
                         }
                     }
-
-                    if ()
-                    {
-
+                    else if (z % 1 == 0)
+                    { 
+                        if (z == 9)
+                        {
+                            str += "IX";
+                            z -= 9;
+                        }
+                        else if(z >= 5 && z < 9)
+                        {
+                            str += "V";
+                            z -= 5;
+                        } 
+                        else if(z == 4)
+                        {
+                            str += "IV";
+                            z -= 4;
+                        }
+                        else
+                        {
+                            str += "I";
+                            z -= 1;
+                        }
                     }
                 }
             }
