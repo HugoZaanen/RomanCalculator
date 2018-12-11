@@ -21,6 +21,7 @@ namespace RomanCalculator
     public partial class MainWindow : Window
     {
         Dictionary<char, int> dict = new Dictionary<char, int>();
+        List<string> numeralFormats = new List<string>();
 
         public MainWindow()
         {
@@ -33,6 +34,13 @@ namespace RomanCalculator
             dict.Add('C', 100);
             dict.Add('D',500);
             dict.Add('M',1000);
+
+            numeralFormats.Add("IV");
+            numeralFormats.Add("IX");
+            numeralFormats.Add("XL");
+            numeralFormats.Add("XC");
+            numeralFormats.Add("CD");
+            numeralFormats.Add("CM");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -197,6 +205,11 @@ namespace RomanCalculator
                     }
                 }
             }
+        }
+
+        private void CheckFormat()
+        {
+
         }
     }
 }
