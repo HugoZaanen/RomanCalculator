@@ -22,6 +22,9 @@ namespace RomanCalculator
     {
         Dictionary<char, int> dict = new Dictionary<char, int>();
         List<string> numeralFormats = new List<string>();
+        string check = "";
+        string numCheck = "";
+        bool isOk = true;
 
         public MainWindow()
         {
@@ -31,7 +34,7 @@ namespace RomanCalculator
             dict.Add('V',5);
             dict.Add('X',10);
             dict.Add('L',50);
-            dict.Add('C', 100);
+            dict.Add('C',100);
             dict.Add('D',500);
             dict.Add('M',1000);
 
@@ -46,18 +49,21 @@ namespace RomanCalculator
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button butt = sender as Button;
-            bool isOk = true;
+            string input = (string)butt.Content;
             string str = "";
 
-            if ((string)butt.Content != "OK" && isOk)
+            if (input != "OK" && isOk)
             {
-                str = (string)butt.Content;
-
-                Txtbx1.Text += (string)butt.Content;
+                str = (string)butt.Content;              
+                Txtbx1.Text += (string)butt.Content;                
             }
             else
             {
-                Txtbx2.Text += (string)butt.Content;
+                isOk = false;
+                if (input != "OK")
+                {
+                    Txtbx2.Text += input;
+                }
             }
         }
 
@@ -89,10 +95,10 @@ namespace RomanCalculator
                     i += dict[chars[j]];
                 }               
             }
-
             MessageBox.Show(i.ToString());
         }
 
+        #region Integers to numerals 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             int k = 2222;
@@ -206,10 +212,47 @@ namespace RomanCalculator
                 }
             }
         }
+#endregion
 
-        private void CheckFormat()
+        private bool CheckFormat(string str)
         {
+            check = str;
 
+            if (numeralFormats.Contains(check) && !(Txtbx1.Text == ""))
+            {
+                return false;
+            }
+            else if (numCheck != "" && NumerToInt(check) <= NumerToInt(numCheck))
+            {
+                return false;
+            }
+
+            numCheck = str;
+            return true;
+        }
+
+        private int NumerToInt(string str)
+        {
+            int i = 0;
+            char[] chars = str.ToCharArray();
+
+            for (int j = chars.Length; j >= 0; j--)
+            {
+                if (j == chars.Length)
+                {
+                    i += dict[chars[j - 1]];
+                    j--;
+                }
+                else if ((dict[chars[j]] == 1 || dict[chars[j]] == 10 || dict[chars[j]] == 100) && dict[chars[j]] < dict[chars[j + 1]])
+                {
+                    i -= dict[chars[j]];
+                }
+                else
+                {
+                    i += dict[chars[j]];
+                }
+            }
+            return i;
         }
     }
 }
